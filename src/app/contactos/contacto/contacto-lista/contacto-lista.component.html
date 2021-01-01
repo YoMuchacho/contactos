@@ -1,1 +1,9 @@
-<p>contacto-lista works!</p>
+<div class="contenedor">
+  <div *ngFor="let contacto of contactos">
+    <app-contacto [contacto]="contacto"></app-contacto>
+  </div>
+
+  <div *ngIf="contactos.length <= 0">
+    <p>No hay contactos registrados...</p>
+  </div>
+</div>
