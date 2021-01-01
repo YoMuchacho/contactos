@@ -1,0 +1,11 @@
+.navbar{
+  justify-content: space-between;
+}
+span{
+  padding-right: 1rem;
+}
+
+.in{
+  color: aliceblue;
+  text-decoration: none;
+}

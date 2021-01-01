@@ -1,0 +1,17 @@
+.informe{
+  margin-top: 60px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.card{
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
