@@ -3,7 +3,8 @@ import { Contacto } from '@contactos/modelos/contacto';
 
 @Component({
     selector: 'app-contacto',
-    templateUrl: './contacto.component.html'
+    templateUrl: './contacto.component.html',
+    styleUrls: ['./contacto.component.css']
 })
 
 export class ContactoComponent {

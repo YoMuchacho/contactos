@@ -41,7 +41,7 @@ export class ContactoRegistrarComponent implements OnInit {
       nombre: [this.contacto.nombre, Validators.required],
       celular: [this.contacto.celular, Validators.required],
       direccion: [this.contacto.direccion, Validators.required],
-      // fecha: [this.contacto.fecha, Validators.required]
+      fecha: [this.contacto.fecha, Validators.required]
     });
   }
 

@@ -14,9 +14,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { ContactoRegistrarComponent } from './contactos/contacto/contacto-registrar/contacto-registrar.component';
 import { ContactoActualizarComponent } from './contactos/contacto/contacto-actualizar/contacto-actualizar.component';
@@ -25,6 +25,7 @@ import { ContactoListaComponent } from './contactos/contacto/contacto-lista/cont
 import { ContactoComponent } from './contactos/contacto/contacto.component';
 import { ContactoInformeComponent } from './contactos/contacto/contacto-informe/contacto-informe.component';
 import { MenuComponent } from './contactos/menu/menu.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -48,13 +49,14 @@ import { MenuComponent } from './contactos/menu/menu.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

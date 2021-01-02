@@ -1,12 +1,15 @@
 <mat-list class="contenedor">
-  <strong> {{ contacto.nombre }} </strong>
-  <a>{{ contacto.celular }}</a>
-  <small> {{ "fecha" }}</small>
-  <mat-icon>edit</mat-icon>
-  <mat-icon>delete_forever</mat-icon>
-</mat-list>
+  <div class="informacion">
+    <strong> {{ contacto.nombre }} </strong>
+    <br>
+    <a>{{ contacto.celular }}</a>
+    <br>
+    <small> {{ contacto.fecha | date }} </small>
+  </div>
 
-<!--
+  <div class="acciones">
+    <mat-icon>edit</mat-icon>
+    <mat-icon>delete_forever</mat-icon>
+  </div>
   <mat-divider></mat-divider>
-  <mat-list-item>{{ "si" }}</mat-list-item>
--->
+</mat-list>
