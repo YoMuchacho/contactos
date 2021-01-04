@@ -19,6 +19,8 @@ export class ContactoRegistrarComponent implements OnInit {
   contacto: Contacto;
   formGroup: FormGroup;
   update = false;
+  title: string;
+  title2: string;
 
   @Input()
   contactoRecibido: Contacto;
@@ -55,8 +57,11 @@ export class ContactoRegistrarComponent implements OnInit {
     let contacto: Contacto;
     if (this.formGroup.valid) {
       contacto = this.formGroup.value;
-      if (this.contactoService.buscarContacto(contacto.identificacion)){
-        alert('Este contacto ya existe');
+      if (this.contactoService.buscarContacto(contacto.identificacion) && this.update){
+        this.guardarContacto();
+        return;
+      }else if (this.contactoService.buscarContacto(contacto.identificacion)){
+        alert('Esta contacto ya esta registrado');
       }else{
         this.guardarContacto();
       }
@@ -84,7 +89,9 @@ export class ContactoRegistrarComponent implements OnInit {
   }
 
   val(contacto: Contacto): void{
-    if (contacto){
+    if (contacto && this.update){
+      alert('Contacto actualizado correctamente');
+    }else if (contacto){
       alert('Contacto registrado correctamente');
     }else{
       alert('Error al guardar');
@@ -98,8 +105,10 @@ export class ContactoRegistrarComponent implements OnInit {
   actualizar(): void{
     if (this.contactoRecibido){
       this.update = true;
+      this.title2 = 'Actualizar contacto';
     }else{
       this.update = false;
+      this.title = 'Crear contacto';
     }
   }
 

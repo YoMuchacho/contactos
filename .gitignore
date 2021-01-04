@@ -45,3 +45,6 @@ testem.log
 .DS_Store
 Thumbs.db
 .vscode/launch.json
+.firebase/hosting.ZGlzdFxjb250YWN0b3M.cache
+.firebaserc
+firebase.json

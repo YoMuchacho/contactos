@@ -56,8 +56,10 @@ export class ContactoService {
   }
 
   totalContactos(): number{
-    const total = localStorage.length;
-    return total;
+    if (this.gets().length > 0){
+      return this.gets().length;
+    }
+    return 0;
   }
 
   buscarContacto(id: string): Contacto{

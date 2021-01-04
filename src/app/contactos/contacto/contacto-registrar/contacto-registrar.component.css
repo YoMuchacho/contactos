@@ -1,5 +1,4 @@
 .contenedor{
-  margin-top: 40px;
   margin: 3rem;
   padding: 0 1rem;
   display: flex;
@@ -25,4 +24,11 @@
 .btn2{
   margin-left: 65px;
   text-align: left;
+}
+
+#title{
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }

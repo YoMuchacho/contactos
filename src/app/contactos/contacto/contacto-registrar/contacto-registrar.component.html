@@ -1,8 +1,9 @@
 <div class="contenedor">
   <form class="formulario" [formGroup]="formGroup">
+    <a id="title"> {{ title || title2 }} </a>
     <div class="form-group-row">
       <mat-form-field class="full-width">
-        <mat-label>Numero de identidicacion</mat-label>
+        <mat-label>Número de identidicacion</mat-label>
         <input formControlName="identificacion" matInput placeholder="1007692345" [readonly]="update">
       </mat-form-field>
       <br>
@@ -12,12 +13,12 @@
       </mat-form-field>
       <br>
       <mat-form-field class="full-width">
-        <mat-label>Numero de celular</mat-label>
+        <mat-label>Número de celular</mat-label>
         <input formControlName="celular" matInput placeholder="3109003450">
       </mat-form-field>
       <br>
       <mat-form-field class="full-width">
-        <mat-label>Direccion</mat-label>
+        <mat-label>Dirección</mat-label>
         <input formControlName="direccion" matInput placeholder="Calle 12 #12-12">
       </mat-form-field>
       <br>
