@@ -1,15 +1,22 @@
-<mat-list class="contenedor">
-  <div class="informacion">
-    <strong> {{ contacto.nombre }} </strong>
-    <br>
-    <a>{{ contacto.celular }}</a>
-    <br>
-    <small> {{ contacto.fecha | date }} </small>
+<div class="card">
+  <div class="contenido">
+    <form class="row">
+      <div class="col-auto">
+        <div class="ajust">
+          <mat-icon>account_box</mat-icon>
+        </div>
+      </div>
+      <div>
+          <strong matline>{{ contacto.nombre }}</strong>
+          <br>
+          <span matLine> {{ contacto.celular }} </span>
+          <br>
+          <small matline> {{ contacto.fecha | date }} </small>
+      </div>
+      <div class="acciones">
+        <mat-icon [routerLink]="['/actualizar', contacto.identificacion]">edit</mat-icon>
+        <mat-icon mat-raised-button (click)="confirmacion(contacto)">delete_forever</mat-icon>
+      </div>
+    </form>
   </div>
-
-  <div class="acciones">
-    <mat-icon>edit</mat-icon>
-    <mat-icon>delete_forever</mat-icon>
-  </div>
-  <mat-divider></mat-divider>
-</mat-list>
+</div>

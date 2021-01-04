@@ -27,6 +27,6 @@ export class InicioComponent implements OnInit {
   }
 
   consultarTotalcumpleanos(): void{
-
+    this.totalCumpleanos = this.contactoService.totalCumpleanos();
   }
 }

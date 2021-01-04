@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -18,15 +18,21 @@ export class ContactoRegistrarComponent implements OnInit {
 
   contacto: Contacto;
   formGroup: FormGroup;
+  update = false;
+
+  @Input()
+  contactoRecibido: Contacto;
 
   constructor(
     private contactoService: ContactoService,
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.contacto = new Contacto();
     this.crearFormulario();
+    this.actualizar();
+    this.llenarFormulario();
   }
 
   crearFormulario(): void{
@@ -34,7 +40,7 @@ export class ContactoRegistrarComponent implements OnInit {
     this.contacto.nombre = '';
     this.contacto.celular = '';
     this.contacto.direccion = '';
-    this.contacto.fecha = '';
+    this.contacto.fecha = new Date();
 
     this.formGroup = this.formBuilder.group({
       identificacion: [this.contacto.identificacion, Validators.required],
@@ -51,10 +57,56 @@ export class ContactoRegistrarComponent implements OnInit {
     }
   }
 
+  regresar(): void{
+    window.history.back();
+  }
+
   guardarContacto(): void{
-    this.contacto = this.formGroup.value;
-    this.contacto.idLocal = String(this.contactoService.totalContactos() + 1);
-    this.contactoService.guardarContacto(this.contacto);
+    let contacto: Contacto;
+    contacto = this.contactoRecibido;
+
+    if (this.update) {
+      contacto = this.formGroup.value;
+      this.contactoService.put(contacto);
+      this.regresar();
+    }else{
+      this.contacto = this.formGroup.value;
+      this.contactoService.post(this.contacto);
+      this.limpiarFormulario();
+      this.regresar();
+    }
+  }
+
+  get control() {
+    return this.formGroup.controls;
+  }
+
+  actualizar(): void{
+    if (this.contactoRecibido){
+      this.update = true;
+    }else{
+      this.update = false;
+    }
+  }
+
+  limpiarFormulario(): void{
     this.formGroup.reset();
+    this.llenarFormulario();
+  }
+
+  llenarFormulario(): void{
+    if (this.contactoRecibido) {
+      this.control.identificacion.setValue(this.contactoRecibido.identificacion);
+      this.control.nombre.setValue(this.contactoRecibido.nombre);
+      this.control.celular.setValue(this.contactoRecibido.celular);
+      this.control.direccion.setValue(this.contactoRecibido.direccion);
+      this.control.fecha.setValue(this.contactoRecibido.fecha);
+    }else{
+      this.control.identificacion.setValue('');
+      this.control.nombre.setValue('');
+      this.control.celular.setValue('');
+      this.control.direccion.setValue('');
+      this.control.fecha.setValue('');
+    }
   }
 }

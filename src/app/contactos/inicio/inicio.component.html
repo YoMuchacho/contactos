@@ -1,17 +1,19 @@
 <div class="informe">
-  <mat-card class="card">
+  <div class="card">
     <div class="contenido">
-      <a> {{ totalContactos }} </a>
+      <a [routerLink]="['/contactos']"> {{ totalContactos }} </a>
+      <br>
+      <a>Total de contactos</a>
     </div>
-    <a>Total de contactos</a>
-  </mat-card>
-
-  <mat-card class="card">
+  </div>
+  <br>
+  <div class="card">
     <div class="contenido">
-      <a> {{ totalCumpleanos }} </a>
+      <a [routerLink]="['/contactos',totalCumpleanos]"> {{ totalCumpleanos }} </a>
+      <br>
+      <a>Contactos que cumplen años hoy</a>
     </div>
-    <a>Contactos que cumplen años hoy</a>
-  </mat-card>
+  </div>
 
   <div class="center">
     <mat-icon class="icono">group</mat-icon>

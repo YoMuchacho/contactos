@@ -2,9 +2,11 @@
   <div class="botonNew">
     <button mat-raised-button color="primary" [routerLink]="['/registrar']">Nuevo contaco</button>
   </div>
-  <div *ngFor="let contacto of contactos">
-    <app-contacto [contacto]="contacto"></app-contacto>
-  </div>
+  <mat-list class="list">
+    <div *ngFor="let contacto of contactos">
+      <app-contacto [contacto]="contacto"></app-contacto>
+    </div>
+  </mat-list>
   <div *ngIf="contactos.length <= 0">
     <p>No hay contactos registrados...</p>
   </div>

@@ -17,7 +17,7 @@ const routes: Routes = [
     component: ContactoRegistrarComponent
   },
   {
-    path: 'actualizar',
+    path: 'actualizar/:id',
     component: ContactoActualizarComponent
   },
   {
@@ -26,6 +26,10 @@ const routes: Routes = [
   },
   {
     path: 'contactos',
+    component: ContactoListaComponent
+  },
+  {
+    path: 'contactos/:id',
     component: ContactoListaComponent
   }
 ];

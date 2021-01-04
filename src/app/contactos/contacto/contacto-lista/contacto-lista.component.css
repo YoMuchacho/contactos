@@ -4,8 +4,11 @@
 }
 
 .contenedor{
-  text-align: center;
   margin-top: 20px;
   margin-right: 100px;
   margin-left: 100px;
+}
+
+.list{
+  margin-top: 40px;
 }

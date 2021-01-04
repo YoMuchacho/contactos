@@ -1,0 +1,18 @@
+.card{
+  margin-bottom: 10px;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px #999;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.ajust {
+  margin-top: 17px;
+}
+
+.acciones{
+  margin-left: 500px;
+  cursor: pointer;
+  margin-top: 19px;
+  position: absolute;
+}

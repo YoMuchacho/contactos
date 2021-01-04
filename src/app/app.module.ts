@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ContactoRegistrarComponent } from './contactos/contacto/contacto-registrar/contacto-registrar.component';
 import { ContactoActualizarComponent } from './contactos/contacto/contacto-actualizar/contacto-actualizar.component';
@@ -54,7 +55,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDividerModule,
     MatListModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

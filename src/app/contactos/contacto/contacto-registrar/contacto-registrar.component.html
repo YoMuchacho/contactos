@@ -3,7 +3,7 @@
     <div class="form-group-row">
       <mat-form-field class="full-width">
         <mat-label>Numero de identidicacion</mat-label>
-        <input formControlName="identificacion" matInput placeholder="1007692345">
+        <input formControlName="identificacion" matInput placeholder="1007692345" [readonly]="update">
       </mat-form-field>
       <br>
       <mat-form-field class="full-width">
@@ -31,7 +31,7 @@
       </mat-form-field>
     </div>
     <div class="button">
-      <button class="btn1" mat-raised-button color="warn">Cancelar</button>
+      <button class="btn1" mat-raised-button color="warn" (click)="regresar()">Cancelar</button>
       <button class="btn2" mat-raised-button color="primary" (click)="onSubmit()">Guardar</button>
     </div>
   </form>
