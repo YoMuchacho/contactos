@@ -34,7 +34,7 @@ export class ContactoService {
     return contactos = [];
   }
 
-  put(contacto: Contacto): void{
+  put(contacto: Contacto): Contacto{
     let contactos: Contacto[] = [];
     this.contactos = this.gets();
     contactos = this.contactos.map( item => {
@@ -44,6 +44,7 @@ export class ContactoService {
       return item;
     });
     localStorage.setItem('datos', JSON.stringify(contactos));
+    return contacto;
   }
 
   delete(contacto: Contacto): void{

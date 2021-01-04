@@ -52,8 +52,14 @@ export class ContactoRegistrarComponent implements OnInit {
   }
 
   onSubmit(): void{
+    let contacto: Contacto;
     if (this.formGroup.valid) {
-      this.guardarContacto();
+      contacto = this.formGroup.value;
+      if (this.contactoService.buscarContacto(contacto.identificacion)){
+        alert('Este contacto ya existe');
+      }else{
+        this.guardarContacto();
+      }
     }
   }
 
@@ -67,13 +73,21 @@ export class ContactoRegistrarComponent implements OnInit {
 
     if (this.update) {
       contacto = this.formGroup.value;
-      this.contactoService.put(contacto);
+      this.val(this.contactoService.put(contacto));
       this.regresar();
     }else{
       this.contacto = this.formGroup.value;
-      this.contactoService.post(this.contacto);
+      this.val(this.contactoService.post(this.contacto));
       this.limpiarFormulario();
       this.regresar();
+    }
+  }
+
+  val(contacto: Contacto): void{
+    if (contacto){
+      alert('Contacto registrado correctamente');
+    }else{
+      alert('Error al guardar');
     }
   }
 
