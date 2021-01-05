@@ -107,6 +107,7 @@ export class ContactoService {
   }
 
   consultarContantosCumplenano(): Contacto[]{
+    this.totalCumpleanos();
     return this.contactosCumplen;
   }
 }

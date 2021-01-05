@@ -23,7 +23,6 @@ import { ContactoActualizarComponent } from './contactos/contacto/contacto-actua
 import { InicioComponent } from './contactos/inicio/inicio.component';
 import { ContactoListaComponent } from './contactos/contacto/contacto-lista/contacto-lista.component';
 import { ContactoComponent } from './contactos/contacto/contacto.component';
-import { ContactoInformeComponent } from './contactos/contacto/contacto-informe/contacto-informe.component';
 import { MenuComponent } from './contactos/menu/menu.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FiltroContactoPipe } from './contactos/filtros/filtro-contacto.pipe';
@@ -36,7 +35,6 @@ import { FiltroContactoPipe } from './contactos/filtros/filtro-contacto.pipe';
     InicioComponent,
     ContactoListaComponent,
     ContactoComponent,
-    ContactoInformeComponent,
     MenuComponent,
     FiltroContactoPipe
   ],
