@@ -1,9 +1,18 @@
 <div class="contenedor">
-  <div class="botonNew">
-    <button mat-raised-button color="primary" [routerLink]="['/registrar']">Nuevo contaco</button>
+  <div class="acciones">
+    <div class="search">
+      <mat-form-field>
+        <mat-label>Buscar contacto</mat-label>
+        <input [(ngModel)]="buscar" autofocus matInput placeholder="Andres Quiroz" value="">
+      </mat-form-field>
+    </div>
+    <div class="botonNew">
+      <button mat-raised-button color="primary" [routerLink]="['/registrar']">Nuevo contacto</button>
+    </div>
   </div>
+
   <mat-list class="list">
-    <div *ngFor="let contacto of contactos">
+    <div *ngFor="let contacto of contactos | filtroContacto:buscar">
       <app-contacto [contacto]="contacto"></app-contacto>
     </div>
   </mat-list>

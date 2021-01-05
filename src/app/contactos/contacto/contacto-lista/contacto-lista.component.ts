@@ -13,6 +13,7 @@ import { Contacto } from '@contactos/modelos/contacto';
 export class ContactoListaComponent implements OnInit {
 
   contactos: Contacto[] = [];
+  buscar = '';
 
   constructor(
     private contactoService: ContactoService,

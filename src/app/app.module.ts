@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +26,7 @@ import { ContactoComponent } from './contactos/contacto/contacto.component';
 import { ContactoInformeComponent } from './contactos/contacto/contacto-informe/contacto-informe.component';
 import { MenuComponent } from './contactos/menu/menu.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FiltroContactoPipe } from './contactos/filtros/filtro-contacto.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ContactoListaComponent,
     ContactoComponent,
     ContactoInformeComponent,
-    MenuComponent
+    MenuComponent,
+    FiltroContactoPipe
   ],
   imports: [
     BrowserModule,

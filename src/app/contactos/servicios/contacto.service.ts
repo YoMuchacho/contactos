@@ -48,11 +48,13 @@ export class ContactoService {
   }
 
   delete(contacto: Contacto): void{
-    let posicion;
+    let posicion: number;
     this.contactos = this.gets();
-    posicion = this.contactos.indexOf(contacto);
-    this.contactos.splice(posicion, 1);
-    localStorage.setItem('datos', JSON.stringify(this.contactos));
+    posicion = this.contactos.findIndex(item => item.identificacion === contacto.identificacion);
+    if (posicion !== -1){
+      this.contactos.splice(posicion, 1);
+      localStorage.setItem('datos', JSON.stringify(this.contactos));
+    }
   }
 
   totalContactos(): number{

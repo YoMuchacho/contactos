@@ -1,10 +1,21 @@
 .botonNew{
-  margin-right: 10px;
+
   text-align: right;
+  margin-left: 50px;
+}
+
+.search{
+  text-align: left;
+  margin-right: 50px;
+}
+
+.acciones{
+  display: flex;
+  justify-content: center;
 }
 
 .contenedor{
-  margin-top: 20px;
+  margin-top: 50px;
   margin-right: 100px;
   margin-left: 100px;
 }
