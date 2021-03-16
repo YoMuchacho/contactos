@@ -1,0 +1,37 @@
+contactos/servicios -
+contactos/contacto -
+contactos/modelos -
+contactos/inicio -
+contactos/lista -
+contactos/filtros
+
+npm install -g npm@latest
+npm cache clean --force
+npm uninstall -g angular-cli
+npm uninstall -g angular/cli
+npm cache clean --force
+npm install -g @angular/cli
+
+-----------------------------------------------------
+crear el modelo
+ng g class contactos/modelos/contacto
+
+https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+
+crear un servicio
+ng g service contactos/servicios/contacto
+
+crear los componenes
+ng g c contactos/contacto/contactoRegistrar --module app
+ng g c contactos/contacto/contactoActualizar --module app
+ng g c contactos/contacto/contactoLista --module app
+ng g c contactos/inicio --module app
+ng g c contactos/menu --module app
+ng g c contactos/contacto/contactoInforme --module app
+ng g pipe contactos/filtros/filtroContacto --module app
+
+-----------------------------------------------------
+
+aun no utilizar
+ng g c contactos/contacto/contactoConsultar --module app
+ng g c contactos/contacto/contactoEliminar --module app
